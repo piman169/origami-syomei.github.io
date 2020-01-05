@@ -1,0 +1,273 @@
+/* body */
+body{
+  max-width: 1000px;
+  margin: auto;
+  background: #070707;
+}
+
+/* header */
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  box-shadow: 0 2px 6px rgba(0,0,0,.5);
+}
+.logo{
+  color: #292929;
+  opacity: .6;
+  text-shadow: 3px 1.4px 3px #ccc;
+  font-size: 21px;
+  line-height: 40px;
+  margin-left: 5px;
+  font-family: 'Kosugi', sans-serif;
+}
+/* ナビ全体　hide */
+.global-nav {
+  position: fixed;
+  right: -320px;/*hide*/
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  padding-top: 40px;
+  background-color: #000;
+  transition: all .6s;
+  z-index: 200;
+  overflow-y: auto;
+}
+.hamburger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 300;
+}
+.global-nav__list {
+  list-style: none;
+}
+.global-nav__item {
+  text-align: center;
+  padding: 0 14px;
+}
+.global-nav__item a {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #fff;
+  transition: .5s
+}
+.global-nav__item a:hover {
+  background-color: #333;
+}
+/* ハンバーガー */
+.hamburger__line {
+  position: absolute;
+  left: 11px;
+  width: 18px;
+  height: 1.3px;
+  background-color: #fff;
+  transition: 1.2s;
+}
+.hamburger__line-1 {
+  top: 14px;
+}
+.hamburger__line-2 {
+  top: 20px;
+}
+.hamburger__line-3 {
+  top: 26px;
+}
+/* クリックアクション　js nav-open*/
+.nav-open .global-nav {
+  right: 0;/*見えるようにする*/
+}
+.nav-open .hamburger__line-1 {
+  transform: rotate(225deg);
+  top: 20px;
+  height: 1.5px;
+}
+.nav-open .hamburger__line-2 {
+  width: 0;
+  left: 50%;
+}
+.nav-open .hamburger__line-3 {
+  transform: rotate(-45deg);
+  top: 20px;
+  height: 1.5px;
+}
+/* slide */
+.slides{
+  position: relative;
+  z-index: -111;
+  overflow: hidden;
+}
+/* effects */
+.effects{
+  position: relative;
+  z-index: 11111;
+  opacity: 0;
+  overflow: hidden;
+  transform: scale(1.1);
+  animation:show-and-hide 20s linear infinite;
+}
+@keyframes show-and-hide {
+  0%,100%{
+    opacity: 0;
+  }
+  15%,90%{
+    opacity: .9;
+  }
+}
+.slides::before{
+  content: "";
+  position:absolute;
+  top: -100px;
+  left: 0;
+  z-index: 1111;
+  background: linear-gradient(135deg,#fff,red,#fff,orange,#fff,yellow,#fff,green,#fff,blue,#fff,indigo,#fff,violet);
+  width: 150%;
+  height: 150%;
+  opacity: .05;
+  filter: blur(30px);
+  animation: effects1 20s linear infinite;
+}
+.slides::after{
+  content: "";
+  position:absolute;
+  top: -10px;
+  left: 0;
+  z-index: 1111;
+  background: linear-gradient(-135deg,red,#fff,orange,#fff,yellow,#fff,green,#fff,blue,#fff,indigo,#fff,violet);
+  width: 150%;
+  height: 150%;
+  opacity: .05;
+  filter: blur(30px);
+  animation: effects2 20s linear infinite;
+}
+@keyframes effects1 {
+  0%,15%{
+      transform: rotate(0deg);
+      opacity: .0;
+  }
+  30%,70%{
+      opacity: .65;
+  }
+  85%,100%{
+      transform: rotate(-360deg);
+      opacity: .0;
+  }
+}
+@keyframes effects2 {
+  0%,15%{
+    transform: rotate(0deg);
+    opacity: .0;
+  }
+  30%,70%{
+      opacity: .65;
+  }
+  85%,100%{
+    transform: rotate(360deg);
+    opacity: .0;
+  }
+}
+/* header END */
+
+/* Introduction */
+.sub-title{
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Roboto', sans-serif;
+  margin: 15px 5px;
+}
+
+/* ギャラリー */
+.gallery{
+  margin: 20px;
+  padding:0;
+}
+
+.container{
+  /* max-width: 760px; */
+  margin: auto;
+  border: 2px solid #fff;
+}
+
+.main-img img{
+  width: 100%;
+}
+.imgs img{
+  width: 100%;
+  height: 100px;
+}
+.imgs{
+  overflow-x: scroll;
+}
+.imgs{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+
+/* contact */
+.sns-flex{
+  display: flex;
+  overflow-x:scroll;
+}
+.sns-btn{
+  border: 1px solid #fff;
+  padding: 30px;
+  margin: 5%;
+}
+.line{
+  transition: 1s;
+}
+.line:hover{
+  background: #333;
+  transform: scale(1.1);
+}
+.line:hover > a{
+  color: #00dd43;
+}
+.facebook{
+  transition: 1s;
+}
+.facebook:hover{
+  background: #333;
+  transform: scale(1.1);
+}
+.facebook:hover > a{
+  color: #4463ba;
+}
+.twitter{
+  transition: 1s;
+}
+.twitter:hover{
+  background: #333;
+  transform: scale(1.1);
+}
+.twitter:hover > a{
+  color: #449bff;
+}
+.insta{
+  transition: 1s;
+}
+.insta:hover{
+  background: #333;
+  transform: scale(1.1);
+}
+.insta:hover > a{
+  color: orange;
+}
+.sns-btn a{
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+  text-shadow: 1px 1px 1px #777,
+  1px 2px 1px #777,1px 3px 1px #777,
+  1px 4px 1px #777,1px 5px 1px #777;
+}

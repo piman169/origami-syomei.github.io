@@ -1,0 +1,19 @@
+@media screen and (max-width: 768px){
+  /* イントロダクション */
+  .intro-photo{
+    width: 100%;
+  }
+  .intro-box{
+    color: #eee;
+    font-weight: lighter;
+    line-height: 20px;
+    font-size: 12px;
+  }
+  .Description{
+    padding: 10px;
+  }
+  .Chara{
+    margin: 32px 0px;
+    padding: 10px;
+  }
+}

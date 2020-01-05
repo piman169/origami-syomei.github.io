@@ -1,0 +1,28 @@
+@media screen and (min-width: 769px){
+    /* イントロダクション */
+  .flex{
+    display: flex;
+    flex-direction: row;
+  }
+  .intro-photo{
+    width: 100%;
+  }
+  .intro-box{
+    font-size: 13px;
+    line-height: 23px;
+    margin: 0 auto;
+    width: 45%;
+    color: #eee;
+    font-weight: lighter;
+    line-height: 20px;
+    transition: .7s;
+    align-items: flex-start;
+  }
+  .intro-box:hover{
+    background: rgba(230,230, 230, 0.15);
+    transform: scale(1.1);
+  }
+  .Chara{
+    margin: 32px 0px;
+  }
+}
