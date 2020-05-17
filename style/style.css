@@ -203,7 +203,6 @@ body{
 }
 .imgs img{
   width: 100%;
-  height: 100px;
 }
 .imgs{
   overflow-x: scroll;
